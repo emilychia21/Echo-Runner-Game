@@ -1,0 +1,146 @@
+:root {
+  --bg: #07131f;
+  --panel: #0f2135;
+  --panel-2: #163248;
+  --accent: #4cc9f0;
+  --accent-2: #f72585;
+  --track: #132a3d;
+  --ground: #0a1f2c;
+  --text: #ebf7ff;
+  --muted: #9ec2d9;
+  --shadow: rgba(18, 29, 44, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: radial-gradient(circle at top, #102b3d 0%, var(--bg) 40%, #040e18 100%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 20px;
+}
+
+.page-shell {
+  width: min(100%, 1100px);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.primary-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, var(--accent), #64dfdf);
+  color: #061823;
+  cursor: pointer;
+  box-shadow: 0 12px 22px rgba(76, 201, 240, 0.35);
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+}
+
+.game-panel {
+  background: rgba(15, 33, 53, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px var(--shadow);
+  padding: 18px;
+}
+
+.hud {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.card {
+  min-width: 120px;
+  background: var(--panel-2);
+  border-radius: 14px;
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.label {
+  color: var(--muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card strong {
+  font-size: clamp(1.4rem, 2vw, 2rem);
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #122f46 0%, #0d1f2d 100%);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.controls {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.controls span {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .primary-btn {
+    width: 100%;
+  }
+}
